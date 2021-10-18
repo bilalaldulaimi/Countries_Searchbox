@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+ 
+  width: 300px;
+  height: 200px;
+  
+}
+body {
+  font-family: 'PT Serif', serif;
+  background-color: rgb(58, 138, 111);
+  color: #fff;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.header {
+  align-items: center;
+  background-color: rgb(57, 127, 145);
+  padding: 20px;
+  text-align: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+ 
+}
+.form input {
+  height: 20px;
+  padding: 25px;
+  margin: 10px;
+  width: auto;
+  border: 2px solid rgb(27, 79, 148);
+  border-radius: 10px;
+}
+
+.flag {
+  display: flex;
+  margin: 0;
+  padding: 10px;  
+}
+
+tr{
+  width: 100%;
+}
+th {
+  padding: 0 150px;
+  font-size: 20px;
+  text-align: start;
+
+}
+td {
+
+  padding: 0 150px;
+  font-size: 17px;
+  text-align: start;
+}
+
+@media (max-width: 520) {
+  th, td {
+    grid-template-columns: repeat(1, 2fr);
+  }
+}
