@@ -1,16 +1,27 @@
-import React from 'react'
-
+import React from 'react';
+import Countries from './Components/Countries';
+import React, { useState, useEffect } from 'react';
 
 const Filter = () => {
-    const [setSearch] = ['']
+    const [search, setSearch] = useState("");
+    const [filteredCountries , setFilteredCountries] = useState([]);
+    
+    useEffect(() => {
+    setFilteredCountries(
+        countries.filter(country => {
+            return country.name.toLowerCase().includes(search.toLowerCase())
+        })
+    )
+}, [search, countries]);
+
     return(
        <>
-         <select className="filter2">
-        <form className="form">
-        <input type="search" name="search" placeholder="Search for any country..." handleChange={(e) => setSearch(e.target.value)}/>
+         <form className="form">
+        <input type="search" name="search" placeholder="Search for any country..." onChange={(e) => setSearch(e.target.value)}/>
         </form>
-        </select>
             </>
+
+            
         );
 
 }
