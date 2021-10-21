@@ -1,10 +1,16 @@
 //import { Languages } from '@material-ui/icons';
 import React, { useState, useEffect } from 'react';
+import { Country } from '../types';
+
+type CountryProps = {
+    countries: Country[];
+    
+}
 
 const Countries = () => {
-    const [countries, setCountries ] = useState([]);
+    const [countries, setCountries ] = useState<Country[]>([]);
     const [search, setSearch] = useState("");
-    const [filteredCountries , setFilteredCountries] = useState([]);
+    const [filteredCountries , setFilteredCountries] = useState<Country[]>([]);
 
       const fetchCountryData = async () => {
         const response = await fetch("https://restcountries-v2.herokuapp.com/all")
@@ -46,7 +52,7 @@ return (
            </table>
            <table>
            {filteredCountries.map((country) => {
-           const {numericCode, name, population, languages, region, flag , trans} = country
+           const {numericCode, name, population, languages, region, flag} = country
            return ( 
                
                   <tbody key={numericCode}>
